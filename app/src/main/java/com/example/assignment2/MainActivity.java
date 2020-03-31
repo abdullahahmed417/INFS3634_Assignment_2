@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnNoteLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        Setting up recyclerView:
         ArrayList<Restaurants> restaurantsArrayList = Restaurants.getRestaurants();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnNoteLis
         mAdapter = new Adapter(restaurantsArrayList, this);
         recyclerView.setAdapter(mAdapter);
     }
-
+//Passing position of clicked itemView to the DetailActivtiy through an intent:
     @Override
     public void onNoteClick(int position) {
         Intent intent = new Intent(this, DetailActivity.class);

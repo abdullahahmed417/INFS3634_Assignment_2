@@ -18,7 +18,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.RestaurantViewHolder> 
         this.mDataset = myDataset;
         this.mOnNoteListener = onNoteListener;
     }
-
+//Inflating the RecyclerView with the default itemView (cardView in list.xml) for what we are actually gonna scroll
     @NonNull
     @Override
     public RestaurantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -26,13 +26,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.RestaurantViewHolder> 
         RestaurantViewHolder restaurantViewHolder = new RestaurantViewHolder(view, mOnNoteListener);
         return restaurantViewHolder;
     }
-
+//Binding all the get methods from restaurant with the text to be displayed on the cardView in list.xml
     @Override
     public void onBindViewHolder(@NonNull RestaurantViewHolder holder, int position) {
         Restaurants currentRestaurant = mDataset.get(position);
         holder.textView.setText(currentRestaurant.getRestaurantName());
     }
-
+//tells the recyclerView about the number of cardViews required for the RecyclerView
     @Override
     public int getItemCount() {
         return mDataset.size();
@@ -54,7 +54,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.RestaurantViewHolder> 
             onNoteListener.onNoteClick(getAdapterPosition());
         }
     }
-
+//Interface for the clickListener that we need for the RecyclerView:
     public interface OnNoteListener {
         void onNoteClick(int position);
     }

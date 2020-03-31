@@ -3,6 +3,7 @@ package com.example.assignment2;
 import java.util.ArrayList;
 
 public class Restaurants {
+//    name , type, location and rating are required details. The image, price and the search option are just for aesthetics
     private String restaurantName;
     private String cuisineType;
     private String restaurantLocation;
